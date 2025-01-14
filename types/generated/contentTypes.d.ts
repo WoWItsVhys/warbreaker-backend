@@ -403,7 +403,7 @@ export interface ApiRotationBuildRotationBuild
   collectionName: 'rotation_builds';
   info: {
     description: '';
-    displayName: 'Rotation Builds';
+    displayName: 'Builds';
     pluralName: 'rotation-builds';
     singularName: 'rotation-build';
   };
@@ -411,10 +411,11 @@ export interface ApiRotationBuildRotationBuild
     draftAndPublish: true;
   };
   attributes: {
+    author: Schema.Attribute.String;
+    body: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    guide: Schema.Attribute.Relation<'manyToOne', 'api::spec-guide.spec-guide'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -422,9 +423,10 @@ export interface ApiRotationBuildRotationBuild
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    rotation: Schema.Attribute.RichText;
-    rotationHeroSpec: Schema.Attribute.Component<'rotations.hero-spec', false>;
-    rotationSpec: Schema.Attribute.Component<'rotations.warrior-spec', false>;
+    talentBuilds: Schema.Attribute.Component<
+      'talent-builds.talent-builds',
+      true
+    >;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -446,7 +448,6 @@ export interface ApiSpecGuideSpecGuide extends Struct.CollectionTypeSchema {
   attributes: {
     author: Schema.Attribute.String & Schema.Attribute.Required;
     body: Schema.Attribute.RichText;
-    consumables: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -456,20 +457,11 @@ export interface ApiSpecGuideSpecGuide extends Struct.CollectionTypeSchema {
       'api::spec-guide.spec-guide'
     > &
       Schema.Attribute.Private;
-    macros: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
-    rotation_builds: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::rotation-build.rotation-build'
-    >;
-    sectionTalentBuilds: Schema.Attribute.DynamicZone<
-      ['talent-buildsz.talent-builds']
-    >;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    weakauras: Schema.Attribute.Text;
   };
 }
 
