@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_talent_buildsz_talent_builds",
+  "collectionName": "components_talent_builds_talent_builds",
   "info": {
-    "displayName": "talentBuilds",
-    "icon": "apps",
+    "displayName": "Talent Builds",
+    "icon": "code",
     "description": ""
   },
   "options": {},
@@ -22,6 +22,20 @@
       ]
     },
     "buildName": {
+      "type": "string"
+    },
+    "keyTalentIcons": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "quickSummary": {
       "type": "string"
     }
   }

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "rotation-build",
     "pluralName": "rotation-builds",
-    "displayName": "Rotation Builds",
+    "displayName": "Builds",
     "description": ""
   },
   "options": {
@@ -12,27 +12,19 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "guide": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::spec-guide.spec-guide",
-      "inversedBy": "rotation_builds"
-    },
-    "rotationSpec": {
-      "type": "component",
-      "repeatable": false,
-      "component": "rotations.warrior-spec"
-    },
-    "rotationHeroSpec": {
-      "type": "component",
-      "repeatable": false,
-      "component": "rotations.hero-spec"
-    },
     "title": {
       "type": "string"
     },
-    "rotation": {
+    "body": {
       "type": "richtext"
+    },
+    "author": {
+      "type": "string"
+    },
+    "talentBuilds": {
+      "type": "component",
+      "repeatable": true,
+      "component": "talent-builds.talent-builds"
     }
   }
 }
