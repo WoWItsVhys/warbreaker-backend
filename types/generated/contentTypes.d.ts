@@ -373,6 +373,7 @@ export interface ApiFeaturedVideoFeaturedVideo
   extends Struct.CollectionTypeSchema {
   collectionName: 'featured_videos';
   info: {
+    description: '';
     displayName: 'Featured Video';
     pluralName: 'featured-videos';
     singularName: 'featured-video';
@@ -391,6 +392,7 @@ export interface ApiFeaturedVideoFeaturedVideo
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    spec: Schema.Attribute.Enumeration<['arms', 'fury', 'protection']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -423,6 +425,7 @@ export interface ApiRotationBuildRotationBuild
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    spec: Schema.Attribute.Enumeration<['arms', 'fury', 'protection']>;
     talentBuilds: Schema.Attribute.Component<
       'talent-builds.talent-builds',
       true
@@ -458,6 +461,7 @@ export interface ApiSpecGuideSpecGuide extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    spec: Schema.Attribute.Enumeration<['arms', 'fury', 'protection']>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

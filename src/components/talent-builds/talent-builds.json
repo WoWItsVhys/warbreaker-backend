@@ -37,6 +37,14 @@
     },
     "quickSummary": {
       "type": "string"
+    },
+    "heroSpec": {
+      "type": "enumeration",
+      "enum": [
+        "mountain_thane",
+        "slayer",
+        "colossus"
+      ]
     }
   }
 }

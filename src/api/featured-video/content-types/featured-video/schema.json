@@ -4,7 +4,8 @@
   "info": {
     "singularName": "featured-video",
     "pluralName": "featured-videos",
-    "displayName": "Featured Video"
+    "displayName": "Featured Video",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,14 @@
   "attributes": {
     "youtubeUrl": {
       "type": "string"
+    },
+    "spec": {
+      "type": "enumeration",
+      "enum": [
+        "arms",
+        "fury",
+        "protection"
+      ]
     }
   }
 }

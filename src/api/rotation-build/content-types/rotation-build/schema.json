@@ -25,6 +25,14 @@
       "type": "component",
       "repeatable": true,
       "component": "talent-builds.talent-builds"
+    },
+    "spec": {
+      "type": "enumeration",
+      "enum": [
+        "arms",
+        "fury",
+        "protection"
+      ]
     }
   }
 }

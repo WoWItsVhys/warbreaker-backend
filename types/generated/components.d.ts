@@ -9,6 +9,9 @@ export interface TalentBuildsTalentBuilds extends Struct.ComponentSchema {
   };
   attributes: {
     buildName: Schema.Attribute.String;
+    heroSpec: Schema.Attribute.Enumeration<
+      ['mountain_thane', 'slayer', 'colossus']
+    >;
     keyTalentIcons: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

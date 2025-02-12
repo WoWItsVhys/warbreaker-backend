@@ -21,6 +21,14 @@
     "author": {
       "type": "string",
       "required": true
+    },
+    "spec": {
+      "type": "enumeration",
+      "enum": [
+        "arms",
+        "fury",
+        "protection"
+      ]
     }
   }
 }
