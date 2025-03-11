@@ -29,6 +29,14 @@
         "fury",
         "protection"
       ]
+    },
+    "heroSpec": {
+      "type": "enumeration",
+      "enum": [
+        "mountain_thane",
+        "slayer",
+        "colossus"
+      ]
     }
   }
 }
